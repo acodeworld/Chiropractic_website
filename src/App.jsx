@@ -1,34 +1,65 @@
-import { useState } from 'react'
-import Header from '../Components/Header'
-import Body from '../Components/Body'
-import Footer from '../Components/Footer'
-import servicesdata from '../data/servicesdata'
+
+import Header from './Components/Header'
+import Body from './Components/Body'
+import Footer from './Components/Footer'
+import servicesdata from './data/servicesdata'
+import About from './pages/About'
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Outlet,
+} from "react-router-dom";
+import Contact from './pages/Contact'
+
+
+
+
+
+  const Layout = () => {
+    return (
+      <div className="app">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    )
+  }
+  
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout/>,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+       },
+      {
+        path: "/About",
+        element: <About />,
+       },
+      {
+        path: "/Contact",
+        element: <Contact />,
+       },
+     
+
+    ]
+  }
+
+
+
+])
 
 
 function App() {
-
-  
-const data = servicesdata.map(item => {
-  return  <div>
-            <h1>{item.service}</h1>
-          </div>
-})
-
-
-
-
 
  
 
   return (
     <div>
-
-      <Header />
-      <Body />
-      <Footer />
-      
-      
-      
+      <RouterProvider router={router} />
     </div>
 
   )

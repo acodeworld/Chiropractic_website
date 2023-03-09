@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import servicesdata from '../data/servicesdata'
+import {Link} from "react-router-dom"
 
 
 
@@ -37,15 +38,16 @@ function Header() {
         </nav>
         <div className='menu'>
             <ul className='menu-list'>
-                <li>Home</li>
-                <li >About Us</li>
+                <Link className="link" to="/"><li>Home</li></Link>
+                <Link className="link" to="/About"><li>About Us</li></Link>
+               
                 <li onMouseOver={mouseEnter} onMouseLeave={mouseLeave}>
                   Services
                   {open ? <div className='dropdown'>{data}</div>: null}
 
                   </li>
                 <li>New Patients</li>
-                <li>Contact Us</li>
+                <Link className="link" to="/Contact"><li>Contact Us</li></Link>
             </ul>
            
 

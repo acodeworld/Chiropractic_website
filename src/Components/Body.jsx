@@ -39,8 +39,8 @@ function Body() {
             </div>
 
             <div className='offer-text'>
-              <h1>At Premier Chiropractic, the patients needs comes first</h1>
-              <p>At Premier Chiropractic, we invite you to get well, naturally--and we'll be here to help you every step of the way. Discover how today!</p>
+              <h1>At Premier Chiropractic, the patient's needs comes first</h1>
+              <p>We at Premier Chiropractic, invite you to get well, naturally--and we'll be here to help you every step of the way. Discover how today!</p>
                   <div className='offers'>
                     <p className=' icons icon-transportation'>Transporation for patients</p>
                     <p className=' icons icon-calendar'>Same day appointments</p>
